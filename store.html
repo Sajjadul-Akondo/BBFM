@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Buy For Me - Store</title>
+  <link rel="stylesheet" href="store.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo"><img src="assets/logo.svg" alt="Best Buy For Me Logo" height="60"></div>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="store.html" class="active">Shop</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <button id="drkthm"><i class='bx bxs-moon'></i></button>
+        <button id="upin" onclick="window.location.href='login.php'">Login</button>
+        <button id="cart-icon" onclick="toggleCart()">
+          <i class='bx bx-cart'></i>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+      <div class="menu-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Notification -->
+  <div class="notification" id="cartNotification">
+    <span>Added to the cart!</span>
+  </div>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider" id="store">
+    <div class="slides">
+      <img src="https://img.freepik.com/free-vector/sale-banner-with-product-description_1361-1333.jpg" class="slide" alt="50% OFF Sale">
+      <img src="https://img.freepik.com/free-vector/gradient-sale-background_23-2149025288.jpg" class="slide" alt="Fast Delivery">
+      <img src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg" class="slide" alt="App Download">
+    </div>
+    <div class="slide-controls">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+  </section>
+
+  <!-- Search and Filter -->
+  <section class="search-filter">
+    <form id="searchForm" action="search.php" method="get">
+      <div class="search-container">
+        <input type="text" name="query" placeholder="Search products...">
+        <button type="submit"><i class='bx bx-search'></i></button>
+      </div>
+      <div class="filter-container">
+        <select name="category" id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+          <option value="home">Home Appliances</option>
+        </select>
+        <select name="price" id="priceFilter">
+          <option value="">All Prices</option>
+          <option value="0-100">$0 - $100</option>
+          <option value="100-500">$100 - $500</option>
+          <option value="500-1000">$500 - $1000</option>
+          <option value="1000+">$1000+</option>
+        </select>
+        <button type="button" id="filterButton">Filter</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-cards">
+      <div class="category-card" data-category="electronics">
+        <img src="https://img.freepik.com/free-photo/wireless-headphone-home-office-table_23-2149542704.jpg" alt="Electronics">
+        <h3>Electronics</h3>
+      </div>
+      <div class="category-card" data-category="fashion">
+        <img src="https://img.freepik.com/free-photo/pile-summer-clothes-wooden-shelf_23-2149575124.jpg" alt="Fashion">
+        <h3>Fashion</h3>
+      </div>
+      <div class="category-card" data-category="books">
+        <img src="https://img.freepik.com/free-photo/minimalist-books-assortment-wooden-background_23-2149431775.jpg" alt="Books">
+        <h3>Books</h3>
+      </div>
+      <div class="category-card" data-category="home">
+        <img src="https://img.freepik.com/free-photo/kitchen-utensils-marble-background_23-2149634010.jpg" alt="Home Appliances">
+        <h3>Home Appliances</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Most-viewed Items -->
+  <section class="product-section">
+    <h2>Most-viewed Items</h2>
+    <div class="items-grid featured">
+      <div class="item products" data-category="books" data-price="49.99">
+        <a href="product.php?id=1" class="product-link">
+          <img src="https://img.freepik.com/free-psd/fantasy-fiction-book-cover-mockup_23-2149858802.jpg" alt="Disney Lorcana Jafar Trove">
+          <h3>Disney Lorcana Jafar Trove</h3>
+          <p>$49.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Disney Lorcana Jafar Trove', 49.99, 1)">Add to Cart</button>
+      </div>
+      <div class="item products" data-category="electronics" data-price="499.99">
+        <a href="product.php?id=2" class="product-link">
+          <img src="https://img.freepik.com/free-photo/smartphone-device-mockup_23-2150220667.jpg" alt="Google Pixel 8a 128GB Unlocked - Obsidian">
+          <h3>Google Pixel 8a 128GB</h3>
+          <p>$499.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Google Pixel 8a 128GB', 499.99, 1)">Add to Cart</button>
+      </div>
+      <div class="item products" data-category="electronics" data-price="69.99">
+        <a href="product.php?id=3" class="product-link">
+          <img src="" alt="Nintendo Switch 2 Pro Controller">
+          <h3>Nintendo Switch 2 Pro Controller</h3>
+          <p>$69.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Nintendo Switch 2 Pro Controller', 69.99, 1)">Add to Cart</button>
+      </div>
+      <div class="item products" data-category="electronics" data-price="999.99">
+        <a href="product.php?id=4" class="product-link">
+          <img src="https://img.freepik.com/free-photo/laptop-working-space_23-2148811062.jpg" alt="Dell Plus 2-in-1 16' Laptop">
+          <h3>Dell Plus 2-in-1 16' Laptop</h3>
+          <p>$999.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Dell Plus 2-in-1 16\' Laptop', 999.99, 1)">Add to Cart</button>
+      </div>
+      <div class="item products" data-category="electronics" data-price="1299.99">
+        <a href="product.php?id=5" class="product-link">
+          <img src="https://img.freepik.com/free-photo/curved-monitor-gaming-work-space_23-2149352705.jpg" alt="ASUS ROG Strix 32' 4K OLED">
+          <h3>ASUS ROG Strix 32' 4K OLED</h3>
+          <p>$1299.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('ASUS ROG Strix 32\' 4K OLED', 1299.99, 1)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Removed swipe controls as requested -->
+  </section>
+
+  <!-- Trending Deals -->
+  <section class="product-section trending-deals">
+    <h2>Trending Deals</h2>
+    <p>These deals are selling fast</p>
+    <div class="tabs deal-categories">
+      <button class="category-btn active" data-category="tvs">TVs</button>
+      <button class="category-btn" data-category="laptops">Laptops & Tablets</button>
+      <button class="category-btn" data-category="computing">Home Computing</button>
+      <button class="category-btn" data-category="gaming">PC Gaming</button>
+      <button class="category-btn" data-category="video-games">Video Games</button>
+    </div>
+    <div class="deals-grid deal-items">
+      <div class="deal-item" data-category="tvs" data-price="599.99">
+        <a href="product.php?id=6" class="product-link">
+          <img src="https://img.freepik.com/free-photo/dark-interior-design-concept_23-2149491313.jpg" alt="Samsung Crystal UHD">
+          <h3>Samsung 65" Crystal UHD 4K TV</h3>
+          <p>$200 off - $599.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Samsung 65\' Crystal UHD 4K TV', 599.99, 1)">Add to Cart</button>
+      </div>
+      <div class="deal-item" data-category="tvs" data-price="549.99">
+        <a href="product.php?id=7" class="product-link">
+          <img src="https://img.freepik.com/free-photo/modern-living-room-with-smart-tv-sofa-home-interior-design_1258-161967.jpg" alt="LG Ultra Smart webOS TV">
+          <h3>LG 65" LED 4K UHD Smart TV</h3>
+          <p>$250 off - $549.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('LG 65\' LED 4K UHD Smart TV', 549.99, 1)">Add to Cart</button>
+      </div>
+      <div class="deal-item" data-category="tvs" data-price="259.99">
+        <a href="product.php?id=8" class="product-link">
+          <img src="https://img.freepik.com/free-photo/smart-tv-mockup-living-room_53876-104719.jpg" alt="Insignia 50" LED 4K Smart Fire TV">
+          <h3>Insignia 50" LED 4K Smart Fire TV</h3>
+          <p>$90 off - $259.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Insignia 50\' LED 4K Smart Fire TV', 259.99, 1)">Add to Cart</button>
+      </div>
+      <div class="deal-item" data-category="tvs" data-price="699.99">
+        <a href="product.php?id=9" class="product-link">
+          <img src="https://img.freepik.com/free-photo/living-room-interior-wall-mockup-warm-tones-with-leather-sofa-minimal-design_41470-4879.jpg" alt="Samsung 75" Crystal UHD 4K TV">
+          <h3>Samsung 75" Crystal UHD 4K TV</h3>
+          <p>$80 off - $699.99</p>
+        </a>
+        <button class="buybtn" onclick="addToCart('Samsung 75\' Crystal UHD 4K TV', 699.99, 1)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Removed swipe controls as requested -->
+    <button class="shopbtn">Shop All Deals</button>
+  </section>
+
+  <!-- Deals container -->
+  <section class="deals-container">
+    <!-- Outlet Deals -->
+    <section class="outlet-deals">
+        <h2>Outlet Deals</h2>
+        <p>Save when you shop the Best Buy Outlet for clearance, open box, refurbished, and pre-owned items.</p>
+        <button class="viewbtn">View Outlet Deals</button>
+    </section>
+
+    <!-- Deal of the Day -->
+    <section class="deal-of-day">
+        <h2>Deal of the Day</h2>
+        <img src="https://img.freepik.com/free-photo/vertical-card-mockup-with-plants_23-2149442838.jpg" alt="Gift Cards">
+        <p>Save 10% on select gift cards</p>
+        <button class="viewbtn">See Bonus Deals</button>
+    </section>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Stay updated with the latest deals and exclusive offers!</p>
+    <form id="newsletterForm" action="#" method="post">
+      <input type="email" placeholder="Enter your email" required>
+      <button id="newsbtn" type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="close-cart" onclick="toggleCart()">✖</div>
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <div id="cartTotal">Total: $0.00</div>
+    <button class="checkout-btn" id="checkout-btn">Checkout</button>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top"><i class='bx bxs-up-arrow-alt'></i></button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="information">
+        <div class="aboutus">
+            <h2>About Us</h2>
+            <p>Best Buy For Me is an online store that provides a wide range of products and services. We aim to
+                provide the best quality products and services to our customers.</p>
+        </div>
+        <div class="footerlinks">
+            <h2>Quick Links</h2>
+            <a href="index.html">Home</a>
+            <a href="store.html">Shop</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="socialmedia">
+            <h2>Follow Us</h2>
+            <a href="#"><i class='bx bxl-facebook' style='color:#4267B2'></i></a>
+            <a href="#"><i class='bx bxl-twitter' style='color:#1DA1F2'></i></a>
+            <a href="#"><i class='bx bxl-instagram' style='color:#E1306C'></i></a>
+        </div>
+    </div>
+    <div class="copywrite">
+        <p>© 2025 Best Buy For Me. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

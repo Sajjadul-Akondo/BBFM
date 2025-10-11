@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Register - Best Buy For Me</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box register-box">
+            <img src="assets/logo.svg" alt="Best Buy For Me Logo" class="user-logo">
+            <h1>Create Account</h1>
+            <div id="registerError" class="error-message"></div>
+            <form id="registerForm" action="process_register.php" method="post">
+                <div class="textbox">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+                <div class="gender-selection">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="textbox">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                </div>
+                <div class="textbox">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="textbox">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="textbox">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+                <div class="textbox">
+                    <label for="user-type">User Type</label>
+                    <select id="user-type" name="user_type" required>
+                        <option value="">Select User Type</option>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+                </div>
+                <div class="textbox checkbox-group">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I agree to the <a href="#">terms and conditions</a></label>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div class="alternative-options">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+                <p><a href="index.html">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const agree = document.getElementById('agree').checked;
+            
+            // Validate password match
+            if (password !== confirmPassword) {
+                document.getElementById('registerError').textContent = 'Passwords do not match';
+                return;
+            }
+            
+            // Validate terms agreement
+            if (!agree) {
+                document.getElementById('registerError').textContent = 'You must agree to the terms and conditions';
+                return;
+            }
+            
+            // Submit the form if validation passes
+            this.submit();
+        });
+    </script>
+</body>
+</html>

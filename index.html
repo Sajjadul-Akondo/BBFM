@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Buy For Me - Get the best services from us">
+    <meta name="keywords" content="Best Buy, Services, Shop, E-commerce">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Best Buy For Me - Home</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="assets/logo.svg" alt="Best Buy For Me Logo" height="60"></div>
+            <div class="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="store.html">Shop</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <button id="drkthm"><i class='bx bxs-moon'></i></button>
+                <button id="upin" onclick="window.location.href='login.php'">Login</button>
+                <button id="cart-icon" onclick="toggleCart()">
+                    <i class='bx bx-cart'></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="content">
+                    <h1>Welcome to BEST BUY FOR ME</h1>
+                    <p>Get the best products and services at unbeatable prices</p>
+                    <button id="shopBtn">SHOP NOW <i class='bx bxs-cart' style='color:#ffffff'></i></button>
+                </div>
+            </div>
+        </section>
+        <!-- the end of the hero section -->
+        <!--the start of Featured Product section-->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="featured">
+                <div class="products">
+                    <img src="https://m.media-amazon.com/images/I/71uTeFCiruL._AC_UF1000,1000_QL80_.jpg" alt="Samsung Smart TV">
+                    <h3>Samsung 55" Smart TV</h3>
+                    <p>$699.99</p>
+                    <button class="buybtn" onclick="addToCart('Samsung 55\' Smart TV', 699.99, 1)">Add to Cart</button>
+                </div>
+                <div class="products">
+                    <img src="https://m.media-amazon.com/images/I/61VuVU94RnL._AC_UF894,1000_QL80_.jpg" alt="Apple iPhone 13">
+                    <h3>Apple iPhone 13</h3>
+                    <p>$799.99</p>
+                    <button class="buybtn" onclick="addToCart('Apple iPhone 13', 799.99, 1)">Add to Cart</button>
+                </div>
+                <div class="products">
+                    <img src="https://m.media-amazon.com/images/I/51u3JdZhOKL._AC_UF1000,1000_QL80_.jpg" alt="Sony Headphones">
+                    <h3>Sony WH-1000XM4</h3>
+                    <p>$349.99</p>
+                    <button class="buybtn" onclick="addToCart('Sony WH-1000XM4', 349.99, 1)">Add to Cart</button>
+                </div>
+            </div>
+            <center>
+                <button class="buybtn" id="showBtn">View All Products</button>
+            </center>
+        </section>
+        <!--the end of Featured Product section-->
+        <hr>
+        <!-- the start of the services section-->
+        <section>
+            <div class="services">
+                <div class="box">
+                    <i class='bx bxs-truck' style='color:#08324e'></i>
+                    <h2>Fast Delivery</h2>
+                    <p>Get your products delivered at your doorstep in no time</p>
+                </div>
+                <div class="box">
+                    <i class='bx bxs-credit-card' style='color:#08324e'></i>
+                    <h2>Secure Payment</h2>
+                    <p>Make secure payments for your orders</p>
+                </div>
+                <div class="box">
+                    <i class='bx bx-support' style='color:#08324e'></i>
+                    <h2>24/7 Support</h2>
+                    <p>Get 24/7 support for any queries or issues</p>
+                </div>
+            </div>
+        </section>
+        <!-- the end of the services section-->
+        <hr> <!-- horizontal line -->
+        <!-- the start of the review section -->
+        <section>
+            <div class="reviews">
+                <h2>What Our Customers Say <i class='bx bxs-star' style='color:#f8fa1e'></i></h2>
+                <div class="services">
+                    <div class="box">
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <p>"I love shopping here! The products are high quality, and the delivery was super fast.
+                            Definitely my go-to store!"</p>
+                        <p>— Sarah Johnson</p>
+                    </div>
+                    <div class="box">
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <p>"Amazing customer service and great variety of products. Will definitely shop here again!"</p>
+                        <p>— Michael Smith</p>
+                    </div>
+                    <div class="box">
+                        <p>⭐️⭐️⭐️⭐️</p>
+                        <P>"Great experience overall! Customer support was very helpful when I had an issue with my
+                            order."</p>
+                        <P>— Emily Davis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- the end of the review section -->
+        <!-- the start of the newsletter section -->
+        <section>
+            <div class="newsletter">
+                <h2>Subscribe to our Newsletter</h2>
+                <p>Get the latest updates on our products and services</p>
+                <form id="newsletterForm" action="#" method="post">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button id="newsbtn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <!-- the end of the newsletter section -->
+         <!-- back to top button -->
+         <button id="backToTop" title="Back to top"><i class='bx bxs-up-arrow-alt'></i></button>
+  
+        <!-- Cart Sidebar -->
+        <div id="cartSidebar" class="cart-sidebar">
+            <div class="close-cart" onclick="toggleCart()">✖</div>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal">Total: $0.00</div>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+
+        <!-- Cart Notification -->
+        <div id="cartNotification" class="notification">
+            <span>Item added to cart!</span>
+        </div>
+    </main>
+    <footer>
+        <div class="information">
+            <div class="aboutus">
+                <h2>About Us</h2>
+                <p>Best Buy For Me is an online store that provides a wide range of products and services. We aim to
+                    provide the best quality products and services to our customers.</p>
+            </div>
+            <div class="footerlinks">
+                <h2>Quick Links</h2>
+                <a href="index.html">Home</a>
+                <a href="store.html">Shop</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="socialmedia">
+                <h2>Follow Us</h2>
+                <a href="#"><i class='bx bxl-facebook' style='color:#4267B2'></i></a>
+                <a href="#"><i class='bx bxl-twitter' style='color:#1DA1F2'></i></a>
+                <a href="#"><i class='bx bxl-instagram' style='color:#E1306C'></i></a>
+            </div>
+        </div>
+        <div class="copywrite">
+            <p>© 2025 Best Buy For Me. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

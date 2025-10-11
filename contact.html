@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Best Buy For Me - Contact</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="assets/logo.svg" alt="Best Buy For Me Logo" height="60"></div>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="store.html">Shop</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html" class="active">Contact</a>
+                <button id="drkthm"><i class='bx bxs-moon'></i></button>
+                <button id="upin">Login</button>
+            </div>
+            <div class="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="welcoming">
+            <h2>How can we help?</h2>
+            <p>Feel free to ask!</p>
+            <form action="search.php" method="get">
+                <input type="text" name="search" id="search" placeholder="Search for anything...">
+                <button type="submit">Search <i class='bx bx-search-alt'></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="help-options">
+        <div class="box">
+            <i class='bx bxs-user'></i>
+            <h2>Account Issues</h2>
+            <p>Help with login, registration, and account settings</p>
+        </div>
+        <div class="box">
+            <i class='bx bxs-package'></i>
+            <h2>Orders & Shipping</h2>
+            <p>Track orders, shipping info, and delivery updates</p>
+        </div>
+        <div class="box">
+            <i class='bx bxs-store'></i>
+            <h2>Product Information</h2>
+            <p>Details about products, specifications, and compatibility</p>
+        </div>
+        <div class="box">
+            <i class='bx bxs-dollar-circle'></i>
+            <h2>Returns & Refunds</h2>
+            <p>How to return products and get refunds</p>
+        </div>
+    </div>
+    <hr>
+    <div class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" id="contactForm" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="account">Account Issues</option>
+                    <option value="orders">Orders & Shipping</option>
+                    <option value="products">Product Information</option>
+                    <option value="returns">Returns & Refunds</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+    <div class="help-options2">
+        <div class="box-no-hover">
+            <h3>Can't find what you're looking for?</h3>
+            <p>Contact directly with an Agent! with <a href="#" id="liveChatBtn"> live-chat <i class='bx bxs-message-square-dots'></i>
+                </a></p>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="close-cart" onclick="toggleCart()">✖</div>
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal">Total: $0.00</div>
+        <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div id="liveChatWidget" class="live-chat-widget">
+        <div class="chat-header">
+            <h3>Live Chat Support</h3>
+            <span class="close-chat" onclick="toggleLiveChat()">✖</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message agent">
+                <span class="message-content">Hi there! How can I help you today?</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendChatMessage()"><i class='bx bxs-send'></i></button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="information">
+            <div class="aboutus">
+                <h2>About Us</h2>
+                <p>Best Buy For Me is an online store that provides a wide range of products and services. We aim to
+                    provide the best quality products and services to our customers.</p>
+            </div>
+            <div class="footerlinks">
+                <h2>Quick Links</h2>
+                <a href="index.html">Home</a>
+                <a href="store.html">Shop</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="socialmedia">
+                <h2>Follow Us</h2>
+                <a href="#"><i class='bx bxl-facebook' style='color:#4267B2'></i></a>
+                <a href="#"><i class='bx bxl-twitter' style='color:#1DA1F2'></i></a>
+                <a href="#"><i class='bx bxl-instagram' style='color:#E1306C'></i></a>
+            </div>
+        </div>
+        <div class="copywrite">
+            <p>© 2025 Best Buy For Me. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

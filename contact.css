@@ -1,0 +1,337 @@
+/* Contact page specific styles */
+.hero {
+    padding: 60px 5%;
+    text-align: center;
+    background-image: linear-gradient(0deg, var(--secondary-color) 0%, #d2f5ff 100%);
+}
+
+.welcoming h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.welcoming p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.welcoming form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.welcoming input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+}
+
+.welcoming button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.welcoming button:hover {
+    background-color: var(--hover-color);
+}
+
+.help-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 5%;
+}
+
+.help-options .box {
+    flex: 0 0 calc(25% - 30px);
+    min-width: 250px;
+}
+
+.help-options .box i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.help-options2 {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.box-no-hover {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark-theme .box-no-hover {
+    background-color: var(--dark-bg);
+}
+
+.box-no-hover h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.box-no-hover a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.box-no-hover a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 60px 5%;
+    background-color: white;
+}
+
+.dark-theme .contact-form-section {
+    background-color: var(--dark-bg);
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark-theme .contact-form {
+    background-color: var(--dark-bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.dark-theme .form-group label {
+    color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group select,
+.dark-theme .form-group textarea {
+    background-color: #333;
+    color: var(--light-text);
+    border-color: #444;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Live Chat Widget */
+.live-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: -350px;
+    width: 320px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: right 0.3s ease;
+}
+
+.live-chat-widget.open {
+    right: 20px;
+}
+
+.dark-theme .live-chat-widget {
+    background-color: var(--dark-bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-chat {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.message.agent {
+    align-self: flex-start;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.dark-theme .message.agent {
+    background-color: #333;
+    color: var(--light-text);
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.chat-input {
+    padding: 15px;
+    display: flex;
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+}
+
+.dark-theme .chat-input input {
+    background-color: #333;
+    color: var(--light-text);
+    border-color: #444;
+}
+
+.chat-input button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .help-options .box {
+        flex: 0 0 calc(50% - 30px);
+    }
+    
+    .welcoming form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .welcoming input {
+        border-radius: 6px;
+    }
+    
+    .welcoming button {
+        border-radius: 6px;
+        padding: 10px;
+    }
+    
+    .live-chat-widget {
+        width: 90%;
+        bottom: 10px;
+    }
+    
+    .live-chat-widget.open {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .help-options .box {
+        flex: 0 0 100%;
+    }
+    
+    .box-no-hover {
+        padding: 20px;
+    }
+}

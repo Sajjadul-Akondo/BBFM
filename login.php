@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBFM Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="assets/logo.svg" alt="Best Buy For Me Logo" class="user-logo">
+            <h1>Login to BBFM</h1>
+            <div id="loginError" class="error-message"></div>
+            <form id="loginForm" action="process_login.php" method="POST">
+                <div class="textbox">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="textbox">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="textbox">
+                    <label for="user-type">User Type</label>
+                    <select id="user-type" name="user_type" required>
+                        <option value="">Select User Type</option>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+                <div class="textbox checkbox-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="alternative-options">
+                <p><a href="forgetpassword.html">Forgot your password?</a></p>
+                <p>Or login with:</p>
+                <div class="social-login">
+                    <a href="#" class="social-login-btn">
+                        <i class='bx bxl-google' style='color:#DB4437'></i>
+                    </a>
+                    <a href="#" class="social-login-btn">
+                        <i class='bx bxl-facebook' style='color:#4267B2'></i>
+                    </a>
+                    <a href="#" class="social-login-btn">
+                        <i class='bx bxl-twitter' style='color:#1DA1F2'></i>
+                    </a>
+                </div>
+                <p><a href="register.html">Create Account</a> | <a href="index.html">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for login errors from PHP redirect
+        <?php
+        session_start();
+        if (isset($_SESSION['login_error'])) {
+            echo "document.getElementById('loginError').textContent = '" . $_SESSION['login_error'] . "';";
+            unset($_SESSION['login_error']);
+        }
+        ?>
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const userType = document.getElementById('user-type').value;
+            
+            // Basic validation
+            if (!email || !password || !userType) {
+                document.getElementById('loginError').textContent = 'All fields are required';
+                return;
+            }
+            
+            // Form submission
+            this.submit();
+        });
+    </script>
+</body>
+</html>
